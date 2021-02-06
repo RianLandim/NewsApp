@@ -1,30 +1,25 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { Button } from "react-native";
-
 //Screen Imports
-import Home from "./screens/HomeScreen/index";
-import Settings from "./screens/SettingsScreen";
+import MyCarousel from "./screens/HomeScreen/index";
+import Teste from "./screens/Test/index";
 
 const Stack = createStackNavigator();
 
-export default function Routes({ navigation }) {
+export default function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
-          component={Home}
+          component={MyCarousel}
           options={{
-            headerLeft: () => (
-              <Button onPress={() => alert("funciona!")} title="Info" />
-            ),
             headerTitle: "News ",
             headerTintColor: "#000",
           }}
         />
-        <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Test" component={Teste} />
       </Stack.Navigator>
     </NavigationContainer>
   );
