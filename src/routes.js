@@ -2,8 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 //Screen Imports
-import MyCarousel from "./screens/HomeScreen/index";
-import Teste from "./screens/Test/index";
+import Home from "./screens/HomeScreen/index";
 
 const Stack = createStackNavigator();
 
@@ -13,13 +12,13 @@ export default function Routes() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
-          component={MyCarousel}
+          component={Home}
           options={{
             headerTitle: "News ",
             headerTintColor: "#000",
+            headerTitleAlign: "center",
           }}
         />
-        <Stack.Screen name="Test" component={Teste} />
       </Stack.Navigator>
     </NavigationContainer>
   );

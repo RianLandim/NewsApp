@@ -1,24 +1,48 @@
 import { Dimensions, StyleSheet } from "react-native";
 
 const { width: screenWidth } = Dimensions.get("window");
+const { height: screenHeight } = Dimensions.get("window");
 
 export default StyleSheet.create({
-  Container: {
+  container: {
     flex: 1,
-    backgroundColor: "#fff",
-  },
-  item: {
-    width: screenWidth - 60,
-    height: screenWidth - 60,
+    alignItems: "center",
   },
   imageContainer: {
-    flex: 1,
-    marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
-    backgroundColor: "white",
-    borderRadius: 8,
+    width: screenWidth,
+    backgroundColor: "#fff",
   },
-  image: {
-    ...StyleSheet.absoluteFillObject,
-    resizeMode: "cover",
+  img: {
+    width: screenWidth,
+    height: 250,
+    borderBottomRightRadius: 100,
+  },
+  newsContainer: {
+    flex: 1,
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 100,
+    height: screenHeight,
+    width: screenWidth,
+  },
+  touchableView: {
+    paddingTop: 75,
+  },
+  newsTouchable: {
+    borderTopColor: "#46494d",
+    borderBottomColor: "#46494d",
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+  },
+  tcInternView: {
+    flex: 1,
+    flexDirection: "column",
+  },
+  imgNewsLogo: {
+    borderRadius: 5,
+    width: 50,
+    height: 50,
+  },
+  imgInternView: {
+    backgroundColor: "#fff",
   },
 });
