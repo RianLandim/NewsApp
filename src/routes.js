@@ -15,8 +15,9 @@ export default function Routes() {
           component={Home}
           options={{
             headerTitle: "News ",
-            headerTintColor: "#000",
+            headerTintColor: "#FFF",
             headerTitleAlign: "center",
+            headerStyle: { backgroundColor: "#3065AC" },
           }}
         />
       </Stack.Navigator>
