@@ -3,7 +3,7 @@ import { Image, SafeAreaView, Text, View } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import styles from "./style";
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ backgroundColor: "#fff" }}>
@@ -22,7 +22,10 @@ export default function Home() {
         </View>
         <View style={styles.newsContainer}>
           <View style={styles.touchableView}>
-            <TouchableOpacity style={styles.newsTouchable}>
+            <TouchableOpacity
+              style={styles.newsTouchable}
+              onPress={() => navigation.navigate("SignUp")}
+            >
               <View style={styles.tcInternView}>
                 <View style={styles.imgInternView}>
                   <Image

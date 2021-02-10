@@ -2,8 +2,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 //Screen Imports
-import Home from "./screens/HomeScreen/index";
-
+import Home from "./screens/Home/index";
+import SignUp from "./screens/SignUp/index";
 const Stack = createStackNavigator();
 
 export default function Routes() {
@@ -20,6 +20,7 @@ export default function Routes() {
             headerStyle: { backgroundColor: "#3065AC" },
           }}
         />
+        <Stack.Screen name="SignUp" component={SignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );
