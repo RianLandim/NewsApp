@@ -8,14 +8,16 @@ import {
   TextInput,
   View,
 } from "react-native";
+import CustomAlert from "./CustomAlert";
 import styles from "./style";
+
 export default function SignIn() {
   const { control, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     if (data.password == data.confirmPassword) {
       console.log(data);
     } else {
-      alert("As senhas não são iguais. Tente novamente!");
+      return <CustomAlert />;
     }
   };
 
@@ -112,7 +114,7 @@ export default function SignIn() {
           )}
         </View>
         <View>
-          <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+          <Button title="Cadastrar" onPress={handleSubmit(onSubmit)} />
         </View>
       </ScrollView>
     </SafeAreaView>
