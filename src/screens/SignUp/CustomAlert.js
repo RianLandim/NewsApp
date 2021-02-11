@@ -1,18 +1,40 @@
-import { Component } from "react";
-import { StyleSheet, View } from "react-native";
-
-export default class customAlert extends Component {
+import { MatterialCommunityIcons } from "@expo/vector-icons";
+import React, { Component, useState } from "react";
+import { Button, Modal, StyleSheet, View } from "react-native";
+import {} from "react-native-gesture-handler";
+export default class CustomAlert extends Component {
   render() {
+    const [modalVisible, setModalVisible] = useState(false);
     return (
-      <View style={styles.Container}>
-        <View style={styles.Top}></View>
-        <View style={styles.Middle}></View>
-        <View style={styles.Bottom}></View>
-      </View>
+      <Modal
+        animationType="fade"
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.Container}>
+          <View style={styles.Top}>
+            <MatterialCommunityIcons
+              name="bell-ring-outline"
+              size={24}
+              color="black"
+            />
+            <Text>Alerta!</Text>
+          </View>
+          <View style={styles.Middle}></View>
+          <View style={styles.Bottom}>
+            <Button
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}
+            />
+          </View>
+        </View>
+      </Modal>
     );
   }
 }
-
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
@@ -21,7 +43,7 @@ const styles = StyleSheet.create({
     width: "80%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#444b57",
+    backgroundColor: "#fff",
     borderWidth: 2,
     borderRadius: 10,
     padding: 4,
@@ -30,8 +52,27 @@ const styles = StyleSheet.create({
     flex: 0.5,
     width: "100%",
     flexDirection: "row",
-    backgroundColor: "#fff",
+    backgroundColor: "#444b57",
+    alignItems: "center",
+    paddingHorizontal: 2,
+    paddingVertical: 4,
   },
-  Middle: { flex: 1, width: "100%" },
-  Bottom: { flex: 0.5, width: "100%" },
+  Middle: {
+    flex: 1,
+    width: "100%",
+    backgroundColor: "#fff",
+    color: "#000",
+    fontSize: 16,
+    marginVertical: 2,
+    padding: 4,
+    textAlign: "center",
+    textAlignVertical: "center",
+  },
+  Bottom: {
+    flex: 0.5,
+    width: "100%",
+    flexDirection: "row",
+    backgroundColor: "#444b57",
+    padding: 4,
+  },
 });
