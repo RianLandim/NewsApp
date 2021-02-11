@@ -44,7 +44,10 @@ export default function Home({ navigation }) {
                 </View>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.newsTouchable}>
+            <TouchableOpacity
+              style={styles.newsTouchable}
+              onPress={() => navigation.navigate("Login")}
+            >
               <View style={styles.tcInternView}>
                 <View style={styles.imgInternView}>
                   <Image

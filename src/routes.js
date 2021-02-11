@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 //Screen Imports
 import Home from "./screens/Home/index";
+import Login from "./screens/Login";
 import SignUp from "./screens/SignUp/index";
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ export default function Routes() {
           }}
         />
         <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );
