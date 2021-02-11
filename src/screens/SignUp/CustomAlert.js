@@ -22,7 +22,11 @@ export default class CustomAlert extends Component {
             />
             <Text>Alerta!</Text>
           </View>
-          <View style={styles.Middle}></View>
+          <View style={styles.Middle}>
+            <Text style={{ color: "#000", fontWeight: "bold" }}>
+              As senhas não são iguais. Tente novamente.
+            </Text>
+          </View>
           <View style={styles.Bottom}>
             <Button
               onPress={() => {
@@ -74,5 +78,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#444b57",
     padding: 4,
+    justifyContent: "center",
   },
 });

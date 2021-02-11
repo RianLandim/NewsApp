@@ -16,9 +16,10 @@ export default function SignIn() {
   const onSubmit = (data) => {
     if (data.password == data.confirmPassword) {
       console.log(data);
-    } else {
-      return <CustomAlert />;
-    }
+    } else
+      (err) => {
+        return <CustomAlert />;
+      };
   };
 
   return (
@@ -39,7 +40,7 @@ export default function SignIn() {
             rules={{ required: true }}
             defaultValue=""
           />
-          {errors.Nome && <Text>Por Favor insira seu nome</Text>}
+          {errors.Nome && <Text>Por favor insira seu nome</Text>}
         </View>
         <View>
           <Controller
@@ -73,7 +74,24 @@ export default function SignIn() {
             rules={{ required: true }}
             defaultValue=""
           />
-          {errors.Endereco && <Text>Por Favor insira seu endereço!</Text>}
+          {errors.Endereco && <Text>Por favor insira seu endereço!</Text>}
+        </View>
+        <View>
+          <Controller
+            control={control}
+            render={({ onChange, onBlur, value }) => (
+              <TextInput
+                placeholder="Email"
+                onBlur={onBlur}
+                onChangeText={(value) => onChange(value)}
+                value={value}
+              />
+            )}
+            name="Email"
+            rules={{ required: true }}
+            defaultValue=""
+          />
+          {errors.Email && <Text>Por favor insira seu Email!</Text>}
         </View>
         <View>
           <Controller
