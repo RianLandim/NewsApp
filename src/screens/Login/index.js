@@ -22,6 +22,7 @@ export default function Login() {
           />
         </View>
       </View>
+      <View></View>
     </SafeAreaView>
   );
 }
