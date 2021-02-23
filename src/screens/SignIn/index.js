@@ -1,18 +1,29 @@
+//import axios from "axios";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import ModalA from "../../components/Alerts/AlertSingUp";
 import styles from "./style";
 
-export default function SignIn() {
+export default function Cadastro() {
   const { control, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => {
-    if (data.password == data.confirmPassword) {
+
+  const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  const onSubmit = async (data) => {
+    if (data.password == data.confirmPassword && data.email == EMAIL_REGEX) {
       console.log(data);
-    } else {
-      alert("Senhas Diferetens!");
+      // await axios.post("https://localhost:3000/usuarios");
+    } else if (data.password != data.confirmPassword) {
+      return <ModalA />;
+    } else if (data.Email != EMAIL_REGEX) {
+      {
+        errors.Email && <Text>Email Required!</Text>;
+      }
     }
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -112,6 +123,7 @@ export default function SignIn() {
                   onChangeText={(value) => onChange(value)}
                   value={value}
                   secureTextEntry={true}
+                  autoCapitalize={false}
                 />
               )}
               name="password"
@@ -133,6 +145,7 @@ export default function SignIn() {
                   onChangeText={(value) => onChange(value)}
                   value={value}
                   secureTextEntry={true}
+                  autoCapitalize={false}
                 />
               )}
               name="confirmPassword"

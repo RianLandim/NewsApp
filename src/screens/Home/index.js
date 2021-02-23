@@ -24,7 +24,7 @@ export default function Home({ navigation }) {
           <View style={styles.touchableView}>
             <TouchableOpacity
               style={styles.newsTouchable}
-              onPress={() => navigation.navigate("SignUp")}
+              onPress={() => navigation.navigate("Cadastro")}
             >
               <View style={styles.tcInternView}>
                 <View style={styles.imgInternView}>
@@ -48,82 +48,6 @@ export default function Home({ navigation }) {
               style={styles.newsTouchable}
               onPress={() => navigation.navigate("Login")}
             >
-              <View style={styles.tcInternView}>
-                <View style={styles.imgInternView}>
-                  <Image
-                    style={styles.imgNewsLogo}
-                    source={{
-                      uri: "https://i.imgur.com/8IvsB1Z.jpg",
-                    }}
-                  />
-                </View>
-                <View>
-                  <Text style={styles.TitleNews}>Titulo da materia</Text>
-                  <Text style={styles.TextSub}>
-                    Aqui deve ser inserido uma previa do que será abordado na
-                    materia!
-                  </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.newsTouchable}>
-              <View style={styles.tcInternView}>
-                <View style={styles.imgInternView}>
-                  <Image
-                    style={styles.imgNewsLogo}
-                    source={{
-                      uri: "https://i.imgur.com/8IvsB1Z.jpg",
-                    }}
-                  />
-                </View>
-                <View>
-                  <Text style={styles.TitleNews}>Titulo da materia</Text>
-                  <Text style={styles.TextSub}>
-                    Aqui deve ser inserido uma previa do que será abordado na
-                    materia!
-                  </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.newsTouchable}>
-              <View style={styles.tcInternView}>
-                <View style={styles.imgInternView}>
-                  <Image
-                    style={styles.imgNewsLogo}
-                    source={{
-                      uri: "https://i.imgur.com/8IvsB1Z.jpg",
-                    }}
-                  />
-                </View>
-                <View>
-                  <Text style={styles.TitleNews}>Titulo da materia</Text>
-                  <Text style={styles.TextSub}>
-                    Aqui deve ser inserido uma previa do que será abordado na
-                    materia!
-                  </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.newsTouchable}>
-              <View style={styles.tcInternView}>
-                <View style={styles.imgInternView}>
-                  <Image
-                    style={styles.imgNewsLogo}
-                    source={{
-                      uri: "https://i.imgur.com/8IvsB1Z.jpg",
-                    }}
-                  />
-                </View>
-                <View>
-                  <Text style={styles.TitleNews}>Titulo da materia</Text>
-                  <Text style={styles.TextSub}>
-                    Aqui deve ser inserido uma previa do que será abordado na
-                    materia!
-                  </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.newsTouchable}>
               <View style={styles.tcInternView}>
                 <View style={styles.imgInternView}>
                   <Image

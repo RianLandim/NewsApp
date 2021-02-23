@@ -29,7 +29,7 @@ export default StyleSheet.create({
   input: {
     borderRadius: 25,
     backgroundColor: "#ccc",
-    color: "#fff",
+    color: "#000",
     borderWidth: 1,
     height: 50,
     padding: 10,
@@ -45,7 +45,7 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 25,
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
     width: 100,
     height: 25,
   },
@@ -54,6 +54,7 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   txtError: {
+    padding: 10,
     fontWeight: "bold",
     color: "#FF0000",
   },
@@ -61,5 +62,17 @@ export default StyleSheet.create({
     backgroundColor: "#000",
     fontWeight: "bold",
     color: "#000",
+  },
+  ContainerM: {
+    flex: 1,
+    flexDirection: "column",
+    height: "25%",
+    width: "80%",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    borderWidth: 2,
+    borderRadius: 10,
+    padding: 4,
   },
 });
