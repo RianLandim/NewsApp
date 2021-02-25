@@ -1,25 +1,30 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-//Screen Imports
-import Home from "./screens/HomeScreen/index";
-
+import Home from "./screens/Home/index";
+import Login from "./screens/Login";
+import Cadastro from "./screens/SignIn/index";
 const Stack = createStackNavigator();
 
 export default function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="Login"
+          component={Login}
           options={{
-            headerTitle: "News ",
-            headerTintColor: "#FFF",
+            title: "Login",
+            headerStyle: {
+              backgroundColor: "#00ffff",
+            },
+            headerTintColor: "#000",
+            headerTitleStyle: { fontWeight: "bold", fontSize: 22 },
             headerTitleAlign: "center",
-            headerStyle: { backgroundColor: "#3065AC" },
           }}
         />
+        <Stack.Screen name="Cadastro" component={Cadastro} />
       </Stack.Navigator>
     </NavigationContainer>
   );
