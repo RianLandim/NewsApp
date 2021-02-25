@@ -1,78 +1,36 @@
 import { Dimensions, StyleSheet } from "react-native";
 
-const { width: screenWidth } = Dimensions.get("window");
-const { height: screenHeight } = Dimensions.get("window");
+const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
   },
-  imageContainer: {
-    width: screenWidth,
-    backgroundColor: "#3065AC",
-  },
-  img: {
-    width: screenWidth,
-    height: 250,
-    borderBottomRightRadius: 100,
-  },
-  newsContainer: {
+  scrollContainer: {
     flex: 1,
-    backgroundColor: "#fff",
-    borderTopLeftRadius: 100,
-    height: screenHeight,
-    width: screenWidth,
+    backgroundColor: "#00ffff",
+    alignSelf: "center",
   },
-  touchableView: {},
-  newsTouchable: {
-    borderTopColor: "#46494d",
-    borderBottomColor: "#46494d",
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    height: 100,
-    width: screenWidth,
-  },
-  tcInternView: {
+  carousel: {
     flex: 1,
-    flexDirection: "row",
+    overflow: "visible",
   },
-  imgNewsLogo: {
-    marginTop: 10,
-    borderRadius: 5,
-    width: 75,
-    height: 75,
-    marginLeft: 15,
-  },
-  imgInternView: {
-    backgroundColor: "#fff",
-  },
-  TitleNews: {
-    fontWeight: "bold",
-    marginLeft: 5,
-    marginTop: 5,
-  },
-  TextContainer: {
-    height: 90,
+  carouselContainer: {
     width: screenWidth,
+    height: 200,
   },
-  TextSub: {
-    height: 90,
-    width: screenWidth - 50,
-    marginLeft: 5,
-    marginTop: 10,
+  carouselImg: {
+    width: screenWidth,
+    height: 200,
   },
-  titlePageContainer: {
-    backgroundColor: "#3065AC",
-    alignItems: "center",
+  carouselTextContainer: {
+    backgroundColor: "#fff",
+    width: screenWidth,
     height: 50,
-    width: screenWidth,
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
   },
-  title: {
-    fontWeight: "bold",
-    alignItems: "center",
-    alignContent: "center",
-    marginTop: 15,
-    color: "#fff",
+  carouselDesc: {
+    fontSize: 15,
   },
 });
