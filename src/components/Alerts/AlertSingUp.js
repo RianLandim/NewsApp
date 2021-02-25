@@ -1,6 +1,6 @@
 import { Button, Modal, StyleSheet, Text, View } from "react-native";
 
-const ModalA = (props) => {
+const ModalA = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
