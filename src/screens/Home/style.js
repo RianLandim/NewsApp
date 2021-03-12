@@ -5,11 +5,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#00ffff",
-  },
-  scrollContainer: {
-    flex: 1,
+    backgroundColor: "#F2FAFD",
     alignSelf: "center",
-  },
-  
+  }, 
 });

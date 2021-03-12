@@ -42,7 +42,7 @@ const list = [
         data={list}
         renderItem={_renderItem}
         sliderWidth={screenWidth}
-        itemWidth={screenWidth}
+        itemWidth={screenWidth - 20}
         scrollEnabled={true}
         enableSnap={true}
         loop={true}
@@ -58,12 +58,16 @@ const list = [
 const styles = StyleSheet.create({
 
   carouselImg: {
-    width: screenWidth,
+    width: screenWidth - 20,
     height: 200,
+    marginTop: 10,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    marginTop:"5%",
   },
   carouselTextContainer: {
     backgroundColor: "#fff",
-    width: screenWidth,
+    width: screenWidth - 20,
     height: 50,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,

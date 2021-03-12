@@ -6,6 +6,7 @@ import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import styles from "./style";
 
 export default function Login({ navigation }) {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

@@ -13,7 +13,7 @@ function DrawerRoutes() {
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Home" component={Home}/>
     </Drawer.Navigator>
   );
 }
