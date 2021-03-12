@@ -21,7 +21,7 @@ export default StyleSheet.create({
   },
   input1: {
     padding: 10,
-    marginTop: 20,
+    marginTop: 15,
   },
   input2: {
     padding: 15,
@@ -31,5 +31,10 @@ export default StyleSheet.create({
     padding: 10,
     backgroundColor: "#ccc",
     width: 300,
+  },
+  logo: {
+    fontWeight: "bold",
+    fontSize: 50,
+    color: "#fff",
   },
 });
