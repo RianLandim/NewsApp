@@ -1,10 +1,10 @@
-//import axios from "axios";
+import axios from "axios";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import ModalA from "../../components/Alerts/AlertSingUp";
 import styles from "./style";
+
 
 export default function Cadastro() {
   const { control, handleSubmit, errors } = useForm();
@@ -12,15 +12,29 @@ export default function Cadastro() {
   const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const onSubmit = async (data) => {
-    if (data.password == data.confirmPassword && data.email == EMAIL_REGEX) {
-      console.log(data);
-      // await axios.post("https://localhost:3000/usuarios");
-    } else if (data.password != data.confirmPassword) {
-      return <ModalA />;
-    } else if (data.Email != EMAIL_REGEX) {
-      {
-        errors.Email && <Text>Email Required!</Text>;
+    try {
+      if (data.password == data.confirmPassword && data.email == EMAIL_REGEX) {
+        console.log(data);
+        await axios.post("https://localhost:3000/Usuarios", {
+          Email,
+          Senha,
+          Nome,
+          SobreNome,
+          Endereco,
+        });
+      } else if (data.password != data.confirmPassword) {
+        return (
+          <>
+            
+          </>
+        );
+      } else if (data.Email != EMAIL_REGEX) {
+        {
+          errors.Email && <Text>Email Required!</Text>;
+        }
       }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -145,7 +159,6 @@ export default function Cadastro() {
                   onChangeText={(value) => onChange(value)}
                   value={value}
                   secureTextEntry={true}
-                  autoCapitalize={false}
                 />
               )}
               name="confirmPassword"
