@@ -8,4 +8,5 @@ export default StyleSheet.create({
     backgroundColor: "#F2FAFD",
     alignSelf: "center",
   }, 
+  list:{},
 });
