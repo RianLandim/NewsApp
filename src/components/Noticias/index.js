@@ -1,14 +1,19 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 
 
 
-export default function Noticias(){
+export default function Noticias({news}){
 
 
     return(
         <View>
-            <Text>Teste</Text>
+            <View>
+                <Image source={{uri: news.urlToImage}}  />
+            </View>
+            <View>
+                <Text>{news.publishedAt}</Text>
+            </View>
         </View>
     )
 }

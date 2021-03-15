@@ -15,12 +15,12 @@ export default function Header(){
         <View style={styles.container}>
             <View style={styles.menu}>
                 <TouchableOpacity  onPress={() => navigation.toggleDrawer()}>
-                    <Feather name="menu" size={30} color="black"  />
+                    <Feather name="menu" size={30} color="white"  />
                 </TouchableOpacity>
             </View>
-            <View style={styles.titleContainer}>
+            <View style={styles.titleContainer}>             
                 <Text style={styles.title}>{route.name}</Text>
-            </View>
+            </View>         
         </View>
     )
 }
@@ -29,13 +29,12 @@ const {width : screenWidth} = Dimensions.get("window")
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        flex: 1,
+        position:"absolute",
         flexDirection:"row",
-        backgroundColor:"#BEC7C6",  
+        backgroundColor:"#C70039",  
         width: screenWidth,
-        height: 40,
-        alignItems: "center",
-        justifyContent:"center",
+        height: "6%",
         shadowColor:"#000",
         shadowOffset:{
             width: 5,
@@ -43,19 +42,22 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 1,
         shadowRadius: 2,
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
     },
      menu:{
+        zIndex:9,
+        alignSelf:"center",
         position:"absolute",
-        zIndex: 9,
-        top: 5,
         left: 5,
+        top: 7,
    },
    title:{
-       fontSize: 18,
-       fontWeight:"bold",
-       fontFamily: ""
+    position:"absolute",
+    color:"#fff",
+    fontSize: 18,
+    fontWeight:"bold",
+    fontFamily: "",
+    top: 7,
+    left: 170,
    }
     
     

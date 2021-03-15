@@ -3,43 +3,31 @@ import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import Carousel from "react-native-snap-carousel";
 
-const list = [
-    {
-      img: "https://i.imgur.com/WloKky0.jpeg",
-      description: "Descriçao 1",
-    },
-    {
-      img: "https://i.imgur.com/sx5OBke.jpeg ",
-      description: "Descriçao 2",
-    },
-  ];
-
-  
-
-  const _renderItem = ({ item, index }) => {
-    return (
-      <View>
-        <TouchableWithoutFeedback>
-          <Image source={{ uri: item.img }} style={styles.carouselImg} />
-          <View style={styles.carouselTextContainer}>
-            <Text style={styles.carouselDesc}>{item.description}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    );
-  };
-
   const { width: screenWidth } = Dimensions.get("window");
 
-  export default function SnapCarousel(){
+  export default function SnapCarousel({news}){
+
     const carouselRef = useRef(null);
+
+    const _renderItem = ({ item, index }) => {
+      return (
+        <View>
+          <TouchableWithoutFeedback onPress={() => {}}>
+            <Image source={{ uri: item.urlToImage }} style={styles.carouselImg} />
+            <View style={styles.carouselTextContainer}>
+              <Text style={styles.carouselDesc} numberOfLines={3} ellipsizeMode={"tail"}>{item.description}</Text>
+            </View>          
+          </TouchableWithoutFeedback>
+        </View>
+      );
+    };
 
     return(
     
     <View styles={styles.carouselContainer}>
       <Carousel
         ref={carouselRef}
-        data={list}
+        data={news.slice(0,6)}
         renderItem={_renderItem}
         sliderWidth={screenWidth}
         itemWidth={screenWidth - 20}
@@ -60,27 +48,30 @@ const styles = StyleSheet.create({
   carouselImg: {
     width: screenWidth - 20,
     height: 200,
-    marginTop: 10,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-    marginTop:"5%",
+    marginTop:"15%",
   },
   carouselTextContainer: {
-    backgroundColor: "#fff",
+    position:"absolute",
+    bottom: 0,
+    backgroundColor: "rgba(150, 150, 150, 0.5)",
     width: screenWidth - 20,
     height: 50,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
   },
   carouselDesc: {
-    fontSize: 15,
+    fontWeight: "bold",
+    color:"#000",
+    marginLeft: 5,
+    marginTop: -2.5,
+    alignSelf:"center"
   },
   carousel: {
-    flex: 1,
     overflow: "visible",
   },
   carouselContainer: {
-    width: screenWidth,
-    height: 200,
+    width: screenWidth - 20,
+    height: "15%",
+    marginTop: "15%",
   },
 })
